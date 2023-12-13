@@ -1,0 +1,8 @@
+.form-button {
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 1em 1em;
+  cursor: pointer;
+}
