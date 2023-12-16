@@ -1,7 +1,12 @@
 import React from 'react'
+import { configureStore } from '@reduxjs/toolkit'
+import { storeSlice } from './slices/slices'
 
-type StoreType = {
+export const store = configureStore({reducer:() => {}})
+
+export type StoreType = {
   films?: Array<FilmType>,
+  serials?:Array<FilmType>,
   theme?:string
 }
 export type FilmType = {
@@ -10,7 +15,9 @@ export type FilmType = {
   desc?: string,
   shortDesc?: string,
   genre?: string,
+  image?: string
 }
+ 
 
 const initState: StoreType= {
   films: [
@@ -20,15 +27,6 @@ const initState: StoreType= {
   theme: 'white'
 }
 
-const enum REDUCER_ACTION_TYPE {
-  CHANGE_THEME,
-  OPEN_MODAL,
-}
-
-type ReducerAction = {
-  type: REDUCER_ACTION_TYPE,
-  payload?:any
-}
 
 // const reducer = (state: StoreType, action: ReducerAction): typeof initState => {
 //   switch(action.type){

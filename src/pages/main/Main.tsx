@@ -1,4 +1,4 @@
-import { StoreContext } from 'src/state/store/store'
+import { StoreContext } from 'src/state/store'
 import './Main.css'
 import Slider from './Slider/Slider'
 import React, { useEffect, useState } from 'react'
@@ -8,7 +8,7 @@ import axios from 'axios'
 const Main = () => {
   const filmsURL = 'http://127.0.0.1:8000/api/v1/films/'
 
-  const [films, setFilms] = useState('')
+  const [films, setFilms] = useState<any>('')
   const getFilms = async () => {
     await axios
       .get(filmsURL)

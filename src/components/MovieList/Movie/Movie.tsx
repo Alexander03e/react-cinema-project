@@ -1,20 +1,22 @@
 import '../MovieList.css'
 import { NavLink } from 'react-router-dom'
 
-const Movie = ({film}) => {
-
+const Movie = ({film,serial}) => {
+  
+  let movie;
+  film ? movie = film : movie = serial
   return (
     <div className="movie__wrapper">
       <div className="movie__img-container">
-        <NavLink to={'/films/'+film.id}>
+        <NavLink to={`/${film ? 'films' : 'serials'}/`+movie?.id}>
           <div className="hidden">
-            <NavLink to={'/films/'+film.id}>Смотреть</NavLink>
+            <NavLink to={`/${film ? 'films' : 'serials'}/`+movie?.id}>Смотреть</NavLink>
             <NavLink to='test'>Смотреть позже</NavLink>
           </div>
-        <img src={film.image} alt="" className="movie__img" /></NavLink>
+        <img src={movie?.image} alt="" className="movie__img" /></NavLink>
       </div>
       <div className="movie__content-container">
-        <p>{film.title}</p>
+        <p>{movie?.title}</p>
       </div>
     </div>
   )

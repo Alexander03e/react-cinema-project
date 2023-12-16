@@ -20,8 +20,8 @@ const Header = ({isAuth, setIsAuth}) => {
             <NavLink to='/' className="nav__item">Главная</NavLink>
             <NavLink to='/films' className="nav__item">Фильмы</NavLink>
             <NavLink to='/serials' className="nav__item">Сериалы</NavLink>
-            <NavLink to='/serials' className="nav__item">Коллекции</NavLink>
-            <NavLink to='/serials' className="nav__item">Жанр</NavLink>
+            <NavLink to='/collections' className="nav__item">Коллекции</NavLink>
+            <NavLink to='/genre' className="nav__item">Жанр</NavLink>
             <input className='nav__search'
               placeholder='Введите запрос'
             />

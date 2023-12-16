@@ -1,20 +1,24 @@
-import React, { createContext, useState } from 'react'
+import React from 'react'
 import './App.css'
 import Header from 'src/components/Header/Header'
 import MainRoutes from './routes/MainRoutes'
 import Footer from './components/Footer/Footer'
-import { StoreContext } from './state/store/store'
+import { StoreContext } from './state/store'
 
 function App() {
   const store = React.useContext(StoreContext)
   const [isAuth, setIsAuth] = React.useState<false | true>(false)
-  // const [store, setStore] = useState(StoreContext)
+
   console.log(store)
   return (
     <StoreContext.Provider value={store}>
-      <Header isAuth={isAuth} setIsAuth={setIsAuth}/>
-      <MainRoutes isAuth={isAuth}/>
-      <Footer />
+      <div className="app">
+        <Header isAuth={isAuth} setIsAuth={setIsAuth}/>
+        <main>
+          <MainRoutes isAuth={isAuth}/>
+        </main>
+        <Footer />
+      </div>
     </StoreContext.Provider>
   )
 }

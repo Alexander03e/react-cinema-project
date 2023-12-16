@@ -1,9 +1,12 @@
 import './Button.css'
 
-const Button = ({text}) => {
-
+const Button = ({text, onClick}) => {
+  const handleClick = (e) => {
+    e.preventDefault()
+    onClick()
+  }
   return (
-    <button className="form-button slide__button">
+    <button onClick={handleClick} className="form-button slide__button">
       {text}
     </button>
   )
