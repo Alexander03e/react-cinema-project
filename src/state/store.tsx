@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import { configureStore } from '@reduxjs/toolkit'
 import { storeSlice } from './slices/slices'
 
-export const store = configureStore({reducer:() => {}})
+export const store = configureStore({
+  reducer:{
+    
+  },
+});
+
+
 
 export type StoreType = {
   films?: Array<FilmType>,
@@ -39,7 +45,7 @@ const initState: StoreType= {
 // }
 
 // export const StoreContext = React.createContext<[StoreType, React.Dispatch<ReducerAction>] | null>(null)
-export const StoreContext = React.createContext<StoreType | null>(initState)
+// export const StoreContext = React.createContext<StoreType | null>(initState)
 
 //export {tState, setTState}
 

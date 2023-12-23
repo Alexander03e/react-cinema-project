@@ -4,10 +4,11 @@ import Slider from './Slider/Slider'
 import React, { useEffect, useState } from 'react'
 import MovieList from 'src/components/MovieList/MovieList'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const Main = () => {
   const filmsURL = 'http://127.0.0.1:8000/api/v1/films/'
-
+  // const filmsN = useSelector(state => state.films.films)
   const [films, setFilms] = useState<any>('')
   const getFilms = async () => {
     await axios
@@ -18,7 +19,6 @@ const Main = () => {
     getFilms()
   }, [])
 
-  const store = React.useContext(StoreContext)
   return (
     <main>
       <div className="container">

@@ -80,7 +80,7 @@ const Films = () => {
         <Filter onClick={openFilters}>Жанр</Filter>
         {filters && <FilterWrapper><Filter onClick={changeGenreFilter} tabindex='0'>Боевик</Filter><Filter onClick={changeGenreFilter1} tabindex='0'>Фантастика</Filter></FilterWrapper>}
         <div className="films-wrapper">
-          {films != ''?films.map(film=> <Movie film={film}/>):''}
+          {films != ''?films.map(film=> <Movie key={film.id} film={film}/>):''}
         </div>
         <Button text='Загрузить еще' onClick={handleClick}/>
       </div>

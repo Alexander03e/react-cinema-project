@@ -6,8 +6,7 @@ import { Switch } from 'antd'
 
 const Header = ({isAuth, setIsAuth}) => {
   const [theme, setTheme] = React.useState<'dark' | 'light'>('light')
-  const [login, setLogin] = React.useState<true | false>(false)
-  const [checked, setChecked] = React.useState<true | false>(false)
+
   const changeTheme = (checked: boolean) => {
     checked ? setTheme('light') : setTheme('dark')
     document.documentElement.setAttribute('data-theme', theme)
@@ -24,8 +23,9 @@ const Header = ({isAuth, setIsAuth}) => {
             <NavLink to='/genre' className="nav__item">Жанр</NavLink>
             <input className='nav__search'
               placeholder='Введите запрос'
+              onClick={() => setIsAuth(!isAuth)}
             />
-            {login ? <NavLink to='/profile'><UserOutlined style={{fontSize: '35px'}}/></NavLink> : <NavLink to='/signin'>Войти</NavLink>}
+            {isAuth ? <NavLink to='/profile'><UserOutlined style={{fontSize: '32px'}}/></NavLink> : <NavLink to='/signin'>Войти</NavLink>}
           </div>
         </nav>
       </div>
