@@ -7,7 +7,17 @@ import styled from 'styled-components'
 
 const Films = () => {
     
-  const [films,setFilms] = React.useState<any>('')
+  interface FilmType {
+    title: string,
+    subtitle:string, 
+    year:number,
+    genre:string[],
+    id:number,
+    image:string,
+    is_favorite: boolean 
+  }
+
+  const [films,setFilms] = React.useState<FilmType | ''>('')
   const [curPage, setCurPage] = React.useState<number>(0)
   const [filters, setFilters] = React.useState(false)
   const [initFilms, setInitFilms] = React.useState('')
