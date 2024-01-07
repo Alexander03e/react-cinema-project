@@ -80,7 +80,6 @@ const Films = () => {
     color:var(--text-color);
   }
   `
-  
   const FilterWrapper = styled.div`
   display:flex;
   gap:1em;
