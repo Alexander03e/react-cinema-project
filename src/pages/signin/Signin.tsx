@@ -30,41 +30,18 @@ const Signin = () => {
             )
   }
 
-  interface IMyForm {
-    name: string; 
-    age: number;
-  }
 
-  const {
-    register, 
-    handleSubmit,
-    formState: {errors},
-    reset,
-  } = useForm<IMyForm>({
-    mode: 'onBlur',
-  })
-
-  const saveElement = (data: IMyForm) => {
-    reset()
-  }
   return (
     <section className="signin">
       <div className="container">
-        <form className='form' onSubmit={handleSubmit(saveElement)}>
-          <input {...register('name', {
-            required:'Поле обязательно для заполнения',
-            minLength: {
-              value: 5,
-              message: 'Нужно больше символов'
-            }
-          })
-          }
+        <form className='form'>
+          <input
           onChange={(e) => {setUserData({...userData, username: e.target.value})}}
           value={userData.username}
           className='form-input'
           placeholder='Введите логин'
           />
-          <div><p>{errors.age?.message}</p></div>
+          
           <input 
             placeholder='Введите пароль' 
             className='form-input'
@@ -72,8 +49,7 @@ const Signin = () => {
             value={userData.password}
             type='password'
             />
-          <div><p>{errors.name?.message}</p></div>
-          <Button text='Войти' onClick={signinClick}/>
+          <Button type='submit' text='Войти' onClick={signinClick}/>
           <p className='redirect-reg'>Нет аккаунта? <NavLink to='/signup'>Зарегистрируйтесь</NavLink></p>
         </form>
       </div>
