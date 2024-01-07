@@ -11,6 +11,7 @@ import Test from 'src/Test'
 import React from 'react'
 import { AuthContext } from 'src/App'
 import Profile from 'src/pages/profile/Profile'
+import Table from 'src/pages/table/Table'
 
 const MainRoutes = () => {
   
@@ -24,8 +25,8 @@ const MainRoutes = () => {
     {path: SERIAL_DETAIL_ROUTE, element: <SerialDetail />},
     {path: FILMS_ROUTE, element: <Films />},
     {path: SERIALS_ROUTE, element: <Serials />},
-    {path: '/module5', element: <Test />}
-  ]
+    
+  ] 
   const authPath: RouteObject[] = [
     {path:PROFILE_ROUTE, element: <Profile />}
   ]
