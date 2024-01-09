@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 30em;
+  gap: 2em;
+  padding-top: 3em;
+  margin: 0 auto;
+  text-align: center;
+}
+.redirect-reg a {
+  color: var(--text-color);
+}
+.form-input {
+  padding: 0.7em;
+  border-radius: 1em;
+  font-size: 1.2em;
+}
