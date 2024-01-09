@@ -11,6 +11,12 @@ const Header = () => {
   const navigate = useNavigate()
   const [theme, setTheme] = React.useState<'dark' | 'light'>('light')
 
+  const logout = () => {
+    setIsAuth(false); 
+    localStorage.removeItem('token'); 
+    navigate('')
+  }
+
   const changeTheme = (checked: boolean) => {
     checked ? setTheme('light') : setTheme('dark')
     document.documentElement.setAttribute('data-theme', theme)
@@ -29,7 +35,7 @@ const Header = () => {
               placeholder='Введите запрос'
               onClick={() => setIsAuth(!isAuth)}
             />
-            {isAuth ? <NavLink to='/profile'><UserOutlined style={{fontSize: '32px'}}/><p onClick={() => {setIsAuth(false); localStorage.removeItem('token'); navigate('')}}>Выйти</p></NavLink> : <NavLink to='/signin'>Войти</NavLink>}
+            {isAuth ? <NavLink to='/profile'><UserOutlined style={{fontSize: '32px'}}/><p onClick={logout}>Выйти</p></NavLink> : <NavLink to='/signin'>Войти</NavLink>}
           </div>
         </nav>
       </div>
