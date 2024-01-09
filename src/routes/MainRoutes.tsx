@@ -25,8 +25,9 @@ const MainRoutes = () => {
     {path: SERIAL_DETAIL_ROUTE, element: <SerialDetail />},
     {path: FILMS_ROUTE, element: <Films />},
     {path: SERIALS_ROUTE, element: <Serials />},
+    {path: '/module5', element: <Test />}
     
-  ] 
+  ]
   const authPath: RouteObject[] = [
     {path:PROFILE_ROUTE, element: <Profile />}
   ]
