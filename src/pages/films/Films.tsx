@@ -37,6 +37,7 @@ const Films = () => {
   const [filters, setFilters] = React.useState(false)
   const [initFilms, setInitFilms] = React.useState('')
   const LIMIT_LIST_USERS = 8;
+  const LIMIT_LIST_FILMS = 6;
   const skip = (page - 1) * LIMIT_LIST_USERS;
   
   const getUsers = async (skip:number, limit:number) => {
@@ -93,7 +94,7 @@ const Films = () => {
     }
   ]
 
-  let filmsURL = `http://127.0.0.1:8000/api/v1/films/?offset=${curPage*6}&limit=6`
+  let filmsURL = `http://127.0.0.1:8000/api/v1/films/?offset=${curPage*LIMIT_LIST_FILMS}&limit=${LIMIT_LIST_FILMS}`
   React.useEffect(() => {
     getFilms()
     getUsers(skip, LIMIT_LIST_USERS)
