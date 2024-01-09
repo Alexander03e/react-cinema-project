@@ -5,28 +5,13 @@ import Button from 'src/components/Button/Button'
 import Movie from 'src/components/MovieList/Movie/Movie'
 import styled from 'styled-components'
 import { Table } from 'antd';
-import type {ColumnsType} from 'antd/es/table'
-
-interface Film {
-  title: string,
-  subtitle:string, 
-  year:number,
-  genre:string[],
-  rating_stars:number,
-  id:number,
-  image:string,
-  is_favorite: boolean 
-}
+import { columns, columns_user,Film, User } from './columns'
 
 interface StyledProps {
   Color?: string
 }
 
-interface User {
-  key: number;
-  name: string;
-  age: number;
-}
+
 
 const Films = () => {
 
@@ -52,47 +37,9 @@ const Films = () => {
     .then((res)=>{setFilms([...films, ...res.data.results]), setInitFilms([...films, ...res.data.results])})
   } 
 
-  const columns_user: ColumnsType<User> = [
-    {
-      key: 'name',
-      title: 'Имя',
-      dataIndex: 'firstName',
-      render: (text) => <a>{text}</a>,
-    },
-    {
-      key: 'age',
-      title: 'Возраст',
-      dataIndex: 'age',
-    },
-  ]
+  
 
-  const columns : ColumnsType<Film> = [
-    {
-      key: 'title',
-      title: 'Фильм',
-      dataIndex: 'title',
-    }, 
-    {
-      key:'subtitle',
-      title: 'Описание',
-      dataIndex: 'subtitle'
-    }, 
-    {
-      key: 'rating',
-      title: 'Рейтинг',
-      dataIndex: 'rating_stars'
-    },
-    {
-      key:'year',
-      title: 'Год',
-      dataIndex: 'year',
-    },
-    {
-      key:'genre',
-      title: 'Жанр',
-      dataIndex: 'genre'
-    }
-  ]
+  
 
   let filmsURL = `http://127.0.0.1:8000/api/v1/films/?offset=${curPage*LIMIT_LIST_FILMS}&limit=${LIMIT_LIST_FILMS}`
   React.useEffect(() => {
