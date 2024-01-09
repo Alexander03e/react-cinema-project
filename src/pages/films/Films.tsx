@@ -148,6 +148,7 @@ const Films = () => {
       setFilms(filteredFilms)
   }
   
+  
   return (
     <section className="films">
       <div className="container">
