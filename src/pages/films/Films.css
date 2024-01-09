@@ -35,3 +35,7 @@
 .films {
   margin-top: 3em;
 }
+
+td a {
+  color: black;
+}

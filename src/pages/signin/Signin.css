@@ -10,3 +10,8 @@
 .redirect-reg a {
   color: var(--text-color);
 }
+.form-input {
+  padding: 0.7em;
+  border-radius: 1em;
+  font-size: 1.2em;
+}

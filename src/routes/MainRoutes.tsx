@@ -11,6 +11,7 @@ import Test from 'src/Test'
 import React from 'react'
 import { AuthContext } from 'src/App'
 import Profile from 'src/pages/profile/Profile'
+import Table from 'src/pages/table/Table'
 
 const MainRoutes = () => {
   
